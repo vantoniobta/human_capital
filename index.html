@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es" ng-app="mediakit">
+<head>
+    <title>vantonio IA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" href="32x32.png" />
+
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mediakit.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/vantonio.css">
+
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+    <script type="text/javascript" language="javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="lib/jquery.dataTables.js"></script>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.js"></script>
+    <script type="text/javascript" src="js/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <script src="lib/720kb.socialshare.js"></script>
+    <script src="js/mediakit.app.js"></script>
+    <script src="js/mediakit.controllers.js"></script>
+    <script src="js/mediakit.directives.js"></script>
+    <script src="js/mediakit.services.js"></script>
+
+
+
+</head>
+
+<body ng-controller="mediakitCtrl">
+    <md-toolbar class="mk-toolbar md-hue-3 md-whiteframe-z4">   
+        <div class="md-toolbar-tools" style="background-color: #008B8B;" >
+          <!--   <md-button class="md-icon-button" ng-click="sidenavToggle();" aria-label="Menu">
+                <md-icon style="color:#4682B4">menu</md-icon>
+            </md-button> -->
+            <h2>
+                <img class="mk-toolbar-logo" src="img/toolbar_logo.png" alt="Multimedios">
+            </h2>
+            <span flex></span>
+            <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Share">
+                    <md-icon style="color:#fff">share</md-icon>
+                </md-button>
+                <md-menu-content>
+                    <md-menu-item>
+                        <md-button ng-click="alert();"  socialshare
+                        socialshare-provider="facebook"
+                        socialshare-text="Mediakit &middot; Grupo Miltimedios"
+                        socialshare-url="http://agencia.multimedios.com/">
+                        <!-- <img src="img/facebook.png"> -->
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="alert();"  socialshare
+                    socialshare-provider="twitter"
+                    socialshare-text="Mediakit &middot; Grupo Miltimedios"
+                    socialshare-url="http://agencia.multimedios.com/">
+                   <!--  <img src="img/gorjeo.png"> -->
+                    
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="alert();"  socialshare
+                socialshare-provider="google+"
+                socialshare-text="Mediakit &middot; Grupo Miltimedios"
+                socialshare-url="http://agencia.multimedios.com/">
+             <!--    <img src="img/gmail.png"> -->
+            </md-button>
+        </md-menu-item>
+        <md-menu-item>
+            <md-button ng-click="open('whatsapp://send?text=Mediakit%20-%20Grupo%20Multimedios%20http://agencia.multimedios.com/')">
+                <!-- <img src="img/whatsapp.png"> -->
+            </md-button>
+        </md-menu-item>
+    </md-menu-content>
+</md-menu>
+</div>
+</md-toolbar>
+<md-content>
+    <ng-view></ng-view>
+</md-content>
+
+<!-- Sidenav -->
+<div class="mk-sidenav-helper" ng-show="sidenavIsOpen" ng-click="sidenavToggle()"></div>
+<div class="mk-sidenav md-whiteframe-z5" ng-class="{open:sidenavIsOpen}" md-swipe-left="sidenavToggle()">
+    <md-content>
+        <md-list>
+         <!--    <md-list-item class="mk-sidenav-logo">
+                <img src="img/toolbar_logo.png" alt="Multimedios">
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item ng-click="go('/'); sidenavToggle();">
+                <md-icon><img src="img/inicio.png"></md-icon>
+                <p>Inicio</p>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item ng-click="go('/metricas'); sidenavToggle();">
+                <md-icon><img src="img/grafico.png"></md-icon>
+                <p>Métricas</p>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item>
+                <md-icon><img src="img/sensible.png"></md-icon>
+                <p>Plataformas</p>
+            </md-list-item>
+            <md-list-item ng-click="go('/web'); sidenavToggle();">
+                <md-icon><img src="img/analitica.png"></md-icon>
+                <p>Web</p>
+            </md-list-item>
+            <md-list-item ng-click="go('/apps'); sidenavToggle();">
+                <md-icon><img src="img/app.png"></md-icon>
+                <p>Apps</p>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item ng-click="go('/social'); sidenavToggle();">
+                <md-icon><img src="img/participacion.png"></md-icon>
+                <p>Social media</p>
+            </md-list-item>
+            <md-divider></md-divider> -->
+            <!--md-list-item ng-click="sidenavToggle();">
+            <md-icon>thumb_up</md-icon>
+            <p>Clientes</p>
+        </md-list-item>
+        <md-divider></md-divider-->
+    </md-list>
+</md-content>
+<div class="mk-legal">Derechos Reservados Grupo Multimedios 2017</div>
+</div>
+
+
+
+
+
+</body>
+</html>

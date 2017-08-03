@@ -1,0 +1,23 @@
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineOutOfPageSlot('/7246/WebMobile/Home/Takeover', 'div-gpt-ad-1498515687607-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+
+
+
+<!-- /7246/WebMobile/Home/Takeover -->
+<div id='div-gpt-ad-1498515687607-0'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1498515687607-0'); });
+</script>
+</div>
+

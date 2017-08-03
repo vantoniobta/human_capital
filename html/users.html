@@ -1,0 +1,179 @@
+<br><br><!-- <div class="container" style="background-color: #ededed">
+    <div class="row" style="padding: 3rem 0;">
+        <div class="col-sm-6 col-md-4">
+          <label>Nombre</label>
+             <input type="text" name="name" value="valentin"><br>
+             <label>Apellidos</label>
+             <input type="text" name="lastname" value="antonio bta">
+            <br>
+          <input type="file" name="file" file-model="myFile" >
+          <button ng-click="insertData()">send</button>
+         </div>
+    </div>
+</div> -->
+<!--  GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Anton|Arimo|Passion+One|Zilla+Slab" rel="stylesheet">
+<div class="mk-info md-padding container" style="background-color: #ededed;top: 0;left: 0;width: 100%;height: 10  0%; ">
+
+   <div class="col-sm-6 "><br>
+    <p style="font-family: 'Passion One', cursive; color:#CD5C5C; font-size: 35px">
+          ENVIA TUS DATOS!
+          </p>
+    </div>
+
+
+
+<!--   <div class="col-sm-6 "><br>
+    <p style="font-family: 'Passion One', cursive; color:#CD5C5C; font-size: 35px">
+          ENVIA TUS DATOS!
+          </p>
+    </div>
+     <div class="col-sm-6 ">
+         <p style="font-family: 'Passion One', cursive; color:#008B8B; font-size: 25px">
+          Continuar con Facebook!
+          </p>
+          <button type="button" class="btn btn-primary">Login</button>
+    </div> -->
+
+
+
+
+
+</div>
+
+
+
+
+
+ <div class="container md-padding" style="border-style: dashed; border-width: 1px; color:#708090" >
+        <div class="row">
+          <div class="col-sm-6"><br/>
+              <md-content class="md-no-momentum">
+                <md-input-container class="md-icon-float md-block">
+                  <!-- Use floating label instead of placeholder -->
+                  <label>Name</label>
+                  <md-icon md-svg-src="img/usuario.svg" class="name"></md-icon>
+                  <input ng-model="user.name" type="text">
+                </md-input-container><br>
+
+                <md-input-container md-no-float class="md-block">
+                  <md-icon md-svg-src="img/llamada-telefonica.svg"></md-icon>
+                  <input ng-model="user.phone" type="text" placeholder="Phone Number">
+                </md-input-container><br>
+
+                <md-input-container class="md-block">
+                  <!-- Use floating placeholder instead of label -->
+                  <md-icon md-svg-src="img/email.svg" class="email"></md-icon>
+                  <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+                </md-input-container>
+              </md-content>
+         </div>
+          <div class="col-sm-6"><br/>
+              <md-content class="md-no-momentum">
+                <md-input-container class="md-icon-float md-block">
+                  <!-- Use floating label instead of placeholder -->
+                  <label>Puesto</label>
+                  <md-icon md-svg-src="img/jefe.svg" class="name"></md-icon>
+
+
+                   <md-select ng-model="selectedUser">
+                      <md-option ng-value="user" ng-repeat="user in users">{{ user.name }}</md-option>
+                    </md-select>
+                  <!--    <md-select name="puesto" ng-model="puesto" required="">
+                      <md-option value="Ejecutivos_de_Ventas">Ejecutivos de Ventas</md-option>
+                      <md-option value="Capturista">Capturista</md-option>
+                    </md-select> -->
+                </md-input-container><br>
+
+
+                <md-input-container class="md-block">
+                  <!-- Use floating placeholder instead of label -->
+                  <md-icon md-svg-src="img/pdf.svg" class="email"></md-icon>
+                  <input ng-model="fiel" type="file"  ng-required="true">
+                </md-input-container>
+              </md-content>
+         </div>
+          <div class="col-sm-4"><br/>
+              <p>
+                  <button class="btn btn-lg btn-block btn-success" type="button">Enviar!</button>
+              </p>
+          </div>
+
+     </div>
+</div>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 footerleft ">
+        <div class="logofooter">NOSOTROS</div>
+        <p>Somos una empresa lider en cada uno de los negocios, estamos comprometidos con la mejora continua para satisfacer a nuestros clientes.</p>
+        <p><i class="fa fa-map-marker"></i>Calle Paricutín 312, Roma, 64700 Monterrey, N.L.</p>
+        <p><i class="fa fa-phone"></i> Phone (México) : +52 (81) 8880 4400</p>
+        <p><i class="fa fa-envelope"></i> E-mail : info@multimedios.com</p>
+        
+      </div>
+      <div class="col-md-2 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7">LINKS</h6>
+        <ul class="footer-ul">
+          <li><a href="#/" style="color: #fff">INICIO</a></li>
+          <li><a href="#/ia" style="color: #fff">POSTULATE AQUI</a></li
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7">MULTIMEDIOS</h6>
+        <div class="post">
+          <p>http://www.multimedios.com<span></span></p>
+          <p>http://laguna.multimedios.com<span></span></p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 paddingtop-bottom">
+        <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+          <div class="fb-xfbml-parse-ignore">
+            <blockquote cite="https://www.facebook.com/facebook"><a href="https://twitter.com/multimediostv"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color: #fff"></i></a></blockquote>
+            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/multimediostv/"><i class="fa fa-facebook-official fa-2x" aria-hidden="true" style="color: #fff"></i></a></blockquote>
+             <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.instagram.com/multimediostv/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color: #fff"></i></a></blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--footer start from here-->
+
+<div class="copyright">
+  <div class="container">
+    <div class="col-md-6">
+      <p>© 2017 - All Rights Grupo Multimedios</p>
+    </div>
+    <div class="col-md-6">
+      <ul class="bottom_ul">
+        <li><a href="http://www.multimedios.com/">www.multimedios.com</a></li>
+        <li><a href="http://www.multimedios.com/telediario">Telediario</a></li>
+        <li><a href="http://www.multimedios.com/deportes">Deportes</a></li>
+        <li><a href="http://www.multimedios.com/programas/vivalavi">Entretenimiendo</a></li>
+        <li><a href="http://www.multimedios.com/radio">Radio</a></li>
+        <li><a href="http://www.multimedios.com/tv">TV</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
