@@ -8,7 +8,7 @@ angular.module('mediakit', [
 .config(function($routeProvider, $compileProvider, $mdThemingProvider) {
 	$routeProvider
 	.when("/", { templateUrl: "html/home.html", controller: "homeCtrl" })
-	.when("/ia", { templateUrl: "html/users.html", controller: "iaCtrl" })
+	.when("/cv", { templateUrl: "html/users.html", controller: "cvCtrl" })
 	.otherwise({ redirectTo: '/' });
 	
 	$compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp):/);
