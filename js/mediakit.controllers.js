@@ -70,15 +70,6 @@ angular.module('mediakit.controllers', ['ngMaterial', '720kb.socialshare'])
 //user html
 .controller('cvCtrl', ['$scope', 'fileUpload', function($scope, fileUpload, $http){
 
-    $scope.users = [
-            { id: 1, name: 'Vendedor' },
-            { id: 2, name: 'Desarrollo web' },
-            { id: 3, name: 'Capturista' },
-            { id: 4, name: 'Operador de consola' },
-            { id: 5, name: 'Diseñador web' }
-    ];
-
-
 	$scope.insertData = function(){
         var file = $scope.myFile;
         var uploadUrl = "includes/test.php";
@@ -110,7 +101,7 @@ angular.module('mediakit.controllers', ['ngMaterial', '720kb.socialshare'])
             });
             return tempData;
         }
-        
+
 }])
 
 
