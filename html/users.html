@@ -1,51 +1,30 @@
-<br><br><!-- <div class="container" style="background-color: #ededed">
-    <div class="row" style="padding: 3rem 0;">
-        <div class="col-sm-6 col-md-4">
-          <label>Nombre</label>
-             <input type="text" name="name" value="valentin"><br>
-             <label>Apellidos</label>
-             <input type="text" name="lastname" value="antonio bta">
-            <br>
-          <input type="file" name="file" file-model="myFile" >
-          <button ng-click="insertData()">send</button>
-         </div>
-    </div>
-</div> -->
-<!--  GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css?family=Anton|Arimo|Passion+One|Zilla+Slab" rel="stylesheet">
-<div class="mk-info md-padding container" style="background-color: #ededed;top: 0;left: 0;width: 100%;height: 10  0%; ">
 
-   <div class="col-sm-6 "><br>
-    <p style="font-family: 'Passion One', cursive; color:#CD5C5C; font-size: 35px">
-          ENVIA TUS DATOS!
-          </p>
-    </div>
-
-
-
-<!--   <div class="col-sm-6 "><br>
-    <p style="font-family: 'Passion One', cursive; color:#CD5C5C; font-size: 35px">
-          ENVIA TUS DATOS!
-          </p>
-    </div>
-     <div class="col-sm-6 ">
-         <p style="font-family: 'Passion One', cursive; color:#008B8B; font-size: 25px">
-          Continuar con Facebook!
-          </p>
-          <button type="button" class="btn btn-primary">Login</button>
-    </div> -->
+ <!--  GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<br><br>
 
 
 
 
 
-</div>
+
+ <div class="mk-info md-padding container" style="background-color: #fff;top: 0;left: 0;width: 100%;height: 10  0%; ">
+    <div class="col-centered ">
+        <h1 style="color:#CD5C5C; font-family: 'Anton', sans-serif;">ENVIANOS TU CV ACTUALIZADO!</h1>
+     </div>
+ </div>
 
 
 
 
 
- <div class="container md-padding" style="border-style: dashed; border-width: 1px; color:#708090" >
+
+
+
+
+
+
+ <div class="container md-padding" >
         <div class="row">
           <div class="col-sm-6"><br/>
               <md-content class="md-no-momentum">
@@ -53,49 +32,52 @@
                   <!-- Use floating label instead of placeholder -->
                   <label>Name</label>
                   <md-icon md-svg-src="img/usuario.svg" class="name"></md-icon>
-                  <input ng-model="user.name" type="text">
+                  <input name="name" ng-model="name" type="text" >
                 </md-input-container><br>
 
                 <md-input-container md-no-float class="md-block">
                   <md-icon md-svg-src="img/llamada-telefonica.svg"></md-icon>
-                  <input ng-model="user.phone" type="text" placeholder="Phone Number">
+                  <input name="celular" ng-model="celular" type="text" placeholder="Phone Number">
                 </md-input-container><br>
 
                 <md-input-container class="md-block">
                   <!-- Use floating placeholder instead of label -->
                   <md-icon md-svg-src="img/email.svg" class="email"></md-icon>
-                  <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+                  <input name="email" ng-model="email" type="email" placeholder="Email (required)" ng-required="true">
                 </md-input-container>
               </md-content>
          </div>
-          <div class="col-sm-6"><br/>
+
+          <div class="col-sm-6"><br/><br>
               <md-content class="md-no-momentum">
-                <md-input-container class="md-icon-float md-block">
-                  <!-- Use floating label instead of placeholder -->
-                  <label>Puesto</label>
-                  <md-icon md-svg-src="img/jefe.svg" class="name"></md-icon>
-
-
-                   <md-select ng-model="selectedUser">
-                      <md-option ng-value="user" ng-repeat="user in users">{{ user.name }}</md-option>
-                    </md-select>
-                  <!--    <md-select name="puesto" ng-model="puesto" required="">
-                      <md-option value="Ejecutivos_de_Ventas">Ejecutivos de Ventas</md-option>
-                      <md-option value="Capturista">Capturista</md-option>
-                    </md-select> -->
-                </md-input-container><br>
-
-
+                <md-content>
+                  <md-autocomplete
+                    md-selected-item="selectedItem"
+                    md-search-text="searchText"
+                    md-items="item in searchTextChange(searchText)"
+                    md-item-text="item.name"
+                    placeholder="Que puesto deseas?"
+                    ng-required="true"
+                    >
+                  <md-item-template>
+                    <span md-highlight-text="searchText" md-highlight-flags="^i">
+                    {{item.name}}
+                        </span>
+                  </md-item-template>
+                  </md-autocomplete><br>
+                </md-content>
+                <br>
                 <md-input-container class="md-block">
                   <!-- Use floating placeholder instead of label -->
                   <md-icon md-svg-src="img/pdf.svg" class="email"></md-icon>
-                  <input ng-model="fiel" type="file"  ng-required="true">
+                  <input type="file" name="file" file-model="myFile">
                 </md-input-container>
               </md-content>
          </div>
+
           <div class="col-sm-4"><br/>
               <p>
-                  <button class="btn btn-lg btn-block btn-success" type="button">Enviar!</button>
+                  <button class="btn btn-lg btn-block btn-success" type="button" ng-click="insertData()">Enviar!</button>
               </p>
           </div>
 
@@ -104,6 +86,8 @@
 <br>
 
 
+
+  
 
 
 
@@ -131,7 +115,7 @@
         <h6 class="heading7">LINKS</h6>
         <ul class="footer-ul">
           <li><a href="#/" style="color: #fff">INICIO</a></li>
-          <li><a href="#/ia" style="color: #fff">POSTULATE AQUI</a></li
+          <li><a href="#/cv" style="color: #fff">POSTULATE AQUI</a></li
         </ul>
       </div>
       <div class="col-md-3 col-sm-6 paddingtop-bottom">
@@ -173,6 +157,10 @@
   </div>
 </div>
 </div>
+
+
+
+
 
 
 

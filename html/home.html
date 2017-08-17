@@ -3,12 +3,13 @@
     <div class="col-md-1"></div>
     <div class="col-md-8 " layout="column" layout-align="center start" layout-fill>
         <div class="md-display-3" hide-gt-sm>
-        <h6 class="center white md-display-2">Únete al equipo de</h6>
+       
         <b style="color:#7DCD40">GRUPO MULTIMEDIOS</b>
+          <h6 class="center white md-display-1">Te invita a formar parte de Nuestro Equipo!</h6>
         </div>
         <div class="md-display-3 col-centered" hide-sm >
-        <h6 class="center white md-display-1">Únete al equipo de</h6>
-        <b style="color:#7DCD40">GRUPO MULTIMEDIOS</b><br>
+        <b style="color:#7DCD40">GRUPO MULTIMEDIOS</b>
+                <h6 class="center white md-display-1">Te invita a formar parte de Nuestro Equipo!</h6>
 <!--         <button type="button" class="btn btn-default btn-transparent" onclick="window.location='#/ia'" />NUESTRAS VACANTES</button>
  -->        </div>
     </div>
@@ -46,7 +47,7 @@
   <h2 style="color: #000">
       En Grupo Multimedios, nos vemos como una empresa consolidada a nivel nacional e internacional, creando valor para nuestros colaboradores, clientes, proveedores y socios, siendo considerada como uno de los mejores lugares para trabajar.
   </h2>
-   <a href="#/ia" id="button">
+   <a href="#/cv" id="button">
          <span>Postulate aqui</span>
       </a><br><br>
     </div>
@@ -73,7 +74,7 @@
         <h6 class="heading7">LINKS</h6>
         <ul class="footer-ul">
           <li><a href="#/" style="color: #fff">INICIO</a></li>
-          <li><a href="#/ia" style="color: #fff">POSTULATE AQUI</a></li
+          <li><a href="#/cv" style="color: #fff">POSTULATE AQUI</a></li
         </ul>
       </div>
       <div class="col-md-3 col-sm-6 paddingtop-bottom">
@@ -129,11 +130,11 @@
                             "targets": 1,
                             "render": function ( data, type, row, meta ) {
                                 var itemID = row[0];                   
-                                return '<a href="#ia?id=' + itemID + '">' + data + '</a>';
+                                return '<a href="#cv?id=' + itemID + '">' + data + '</a>';
                             }
                         }],
                     "ajax":{
-                        url :"employee-grid-data.php", // json datasource
+                        url :"human_resource.php", // json datasource
                         type: "post",  // method  , by default get
                         error: function(){  // error handling
                             $(".employee-grid-error").html("");
