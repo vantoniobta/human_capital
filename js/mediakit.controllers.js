@@ -16,9 +16,13 @@ angular.module('mediakit.controllers', ['ngMaterial', '720kb.socialshare'])
    };
 }])
 .service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl){
+    this.uploadFileToUrl = function(file, uploadUrl, name,email, celular, puesto){
          var fd = new FormData();
          fd.append('file', file);
+         fd.append('name', name);
+         fd.append('email', email);
+         fd.append('celular', celular);
+         fd.append('searchText', puesto);
          $http.post(uploadUrl, fd, {
              transformRequest: angular.identity,
              headers: {'Content-Type': undefined,'Process-Data': false}
@@ -48,62 +52,67 @@ angular.module('mediakit.controllers', ['ngMaterial', '720kb.socialshare'])
 
 
 
-
-//.................................................................................
-
+//home html
 .controller('homeCtrl', function($scope, $location, $window, $http) {
 	$scope.go = function(_path) {
 		$location.path(_path);
 		$window.scrollTo(0, 0);
 	};
-        //table
+    // get info table
     $http.get("http://localhost/angularjs/includes/json.php")
    .then(function (response) {$scope.names = response.data.records;});
 })
 
 
-//.................................................................................
-
-.controller('iaCtrl', ['$scope', 'fileUpload', function($scope, fileUpload, $http){
 
 
-	  $scope.insertData = function(){
+
+//user html
+.controller('cvCtrl', ['$scope', 'fileUpload', function($scope, fileUpload, $http){
+
+    $scope.users = [
+            { id: 1, name: 'Vendedor' },
+            { id: 2, name: 'Desarrollo web' },
+            { id: 3, name: 'Capturista' },
+            { id: 4, name: 'Operador de consola' },
+            { id: 5, name: 'Diseñador web' }
+    ];
+
+
+	$scope.insertData = function(){
         var file = $scope.myFile;
-        console.dir(file);
-        var uploadUrl = "includes/test.php";    
-        fileUpload.uploadFileToUrl(file, uploadUrl);
-   };
+        var uploadUrl = "includes/test.php";
+        var text      = $scope.name;
+        var puesto    = $scope.searchText;
+        var email     = $scope.email;
+        var celular = $scope.celular;
+        fileUpload.uploadFileToUrl(file, uploadUrl,text, email, celular,puesto,);
+    };
 
 
-     $scope.users = [
+        $scope.searchText = "";
+        $scope.selectedItem = [];
+        $scope.Vacancies = [
+            {"id":1,"name":"Vendedor"}, 
+            {"id":2,"name":"Desarrollo web"},
+            {"id":3,"name":"Capturista"}, 
+            {"id":4,"name":"Operador de consola"}, 
+            {"id":5,"name":"Diseñador web"}
+        ];
 
-            { id: 1, name: 'Bob' },
-            { id: 2, name: 'Alice' },
-            { id: 3, name: 'Steve' },
-            { id: 4, name: 'ana' },
-            { id: 5, name: 'jose' },
-            { id: 6, name: 'pedro' },
-            { id: 7, name: 'gabi' },
-            { id: 8, name: 'karla' },
-            { id: 9, name: 'joaquin' }
-          ];
-
-     $scope.selectedUser = { id: 1, name: 'Bob' };
-
-
-
-
-
-    // $scope.sizes = [
-    //     {size:48,padding:10},
-    //     {size:36,padding:6},
-    //     {size:24,padding:2},
-    //     {size:12,padding:0}
-    // ];
-
-
+         $scope.searchTextChange = function (str) {
+            var tempData = [];
+            angular.forEach($scope.Vacancies, function(item){
+                if (item.name.toLowerCase().indexOf($scope.searchText.toLowerCase()) >=0)
+                {
+                    tempData.push(item);
+                }
+            });
+            return tempData;
+        }
+        
 }])
-//.................................................................................
+
 
 
 
